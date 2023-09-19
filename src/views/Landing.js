@@ -2,7 +2,9 @@
 
 function Landing(){
     return(
-        <div className="container">TEST</div>
+        <div className="container">
+            
+        </div>
     )
 }
 
