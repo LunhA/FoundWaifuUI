@@ -1,10 +1,11 @@
 body {
   background-color: #111617;
+  font-family: Google Sans!important;
 }
 
 .header-container {
   height: 60px;
-  background-color: #0E2D31;
+  background-color: #0e2d31;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,7 +42,93 @@ body {
   font-size: 16px;
 }
 
+.main-page {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: -30px;
+  justify-content: center;
+  margin-bottom: 15px;
+}
 
-.container{
+.main-container {
+  width: 60%;
+  height: 1000px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main-option-column {
+  background-color: white;
+  width: 29%;
+  height: 100%;
+}
+
+.main-content-container {
+  /* background-color: aquamarine; */
+  width: 70%;
+  height: 100%;
+  display: block;
+  
+}
+
+.promos-character-banner {
+  width: 95%;
+  height: 170px;
+  background-image: linear-gradient(315deg, #3b816d 0%, #000000 80%);
+  border-radius: 15px;
+
+  > .promos-character-banner--a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+   
+
+    /* justify-content: center; */
+
+    > .promos-character-img {
+      width: 26%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      > .promos-character-img--img {
+        width: 65%;
+        height: 70%;
+        border-radius: 48%;
+      }
+    }
+  }
+}
+
+.promos-character-info {
+  height: 100%;
+  width: 30%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.promos-character-name {
+  width: 100%;
   color: white;
+  font-size: 20px;
+}
+
+.promos-character-movie {
+  color: grey;
+  width: 100%;
+}
+
+.promos-character-personality {
+  color: sandybrown;
+  width: 100%;
+}
+
+.category-container{
+  width: 100%;
+  
 }
