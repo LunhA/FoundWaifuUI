@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from '../App';
+// import ReactDOM from 'react-dom';
+// import App from '../App';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Landing from '../views/Landing';
 import CharacterDetails from '../views/CharacterDetails';

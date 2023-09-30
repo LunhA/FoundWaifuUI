@@ -1,35 +1,106 @@
+import React, { useState } from 'react';
 
+function Landing() {
+  const [selectedOptions, setSelectedOptions] = useState([]);
+  const [inputValue, setInputValue] = useState('');
+  const [inputCount, setInputCount] = useState(0);
 
-function Landing(){
-    return(
-        <div className="main-page">
-            <div className="main-container">
-                <div className="main-option-column">
-                    TOP AIRING
-                </div>
-                <div className="main-content-container">
-                    <div className="promos-character-banner">
-                        <a href="#" className="promos-character-banner--a">
-                            <div className="promos-character-img">
-                                <img src="https://static1.personality-database.com/profile_images/67550e7927914846bb6775ef731236c2.png" className="promos-character-img--img"></img>
-                            </div>
-                            <div className="promos-character-info" >
-                                <div className="promos-character-name">NAMI</div>
-                                <div className="promos-character-movie">One Piece 2023</div>
-                                <div className="promos-character-personality">ENTJ 3w2 sp/so 369 votes</div>
-                            </div>
-                        </a>
-                    </div>
-                    <div className="category-container">
-                        <div className="field-container">
-                            <div className="field-name">Ten Linh Vuc </div>
-                            <div className="field-items"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  const handleCheckboxChange = (event) => {
+    const option = event.target.value;
+    if (event.target.checked && selectedOptions.length < 4) {
+      setSelectedOptions([...selectedOptions, option]);
+    } else {
+      setSelectedOptions(selectedOptions.filter((item) => item !== option));
+    }
+  };
+
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
+  const handleInputSubmit = () => {
+    if (inputValue.trim() !== '' && inputCount < 4) {
+      setSelectedOptions([...selectedOptions, inputValue]);
+      setInputValue('');
+      setInputCount(inputCount + 1);
+    }
+  };
+
+  return (
+    <div className="main-page">
+      <div className="main-container">
+        <div className="question">
+          <p>Chọn 4 mục mà bạn quan trọng nhất:</p>
+          <div className="options">
+            <label>
+              <input
+                type="checkbox"
+                value="Option 1"
+                onChange={handleCheckboxChange}
+                disabled={selectedOptions.length === 4}
+              />
+              Option 1
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                value="Option 2"
+                onChange={handleCheckboxChange}
+                disabled={selectedOptions.length === 4}
+              />
+              Option 2
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                value="Option 3"
+                onChange={handleCheckboxChange}
+                disabled={selectedOptions.length === 4}
+              />
+              Option 3
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                value="Option 4"
+                onChange={handleCheckboxChange}
+                disabled={selectedOptions.length === 4}
+              />
+              Option 4
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                value="Tôi không rõ"
+                onChange={handleCheckboxChange}
+                disabled={selectedOptions.length === 4}
+              />
+              Tôi không rõ
+            </label>
+          </div>
         </div>
-    )
+        <div className="selected-options">
+          {selectedOptions.map((option, index) => (
+            <p key={index}>{option}</p>
+          ))}
+        </div>
+        {selectedOptions.length === 4 && (
+          <button className="next-button">Tiếp Theo</button>
+        )}
+        {inputCount < 4 && (
+          <div className="input-page">
+            <input
+              type="text"
+              value={inputValue}
+              onChange={handleInputChange}
+              placeholder="Nhập lựa chọn của bạn"
+            />
+            <button className='' onClick={handleInputSubmit}>Nhập</button>
+          </div>
+        )}
+      </div>
+    </div>
+  );
 }
 
 export default Landing;

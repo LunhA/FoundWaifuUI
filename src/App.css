@@ -132,3 +132,64 @@ body {
   width: 100%;
   
 }
+
+
+
+
+
+
+
+
+
+/* TEST */
+.question p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.options label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+.selected-options {
+  margin-top: 20px;
+}
+
+.next-button {
+  /* display: none; */
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.input-page {
+  display: none;
+  text-align: center;
+}
+
+.input-page input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 80%;
+  margin-top: 10px;
+}
+
+.input-page button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
