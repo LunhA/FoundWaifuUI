@@ -169,7 +169,7 @@ body {
   margin-top: 20px;
 }
 
-.input-page {
+/* .input-page {
   display: none;
   text-align: center;
 }
@@ -192,4 +192,113 @@ body {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
+} */
+
+.welcome-page, .question-page, .input-question {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .welcome-content {
+    text-align: center;
+    color: white;
+    > h1 {
+      color: white;
+      margin-bottom: 20px; 
+    }
+  }
+ .btn-info{
+  height: 50px;
+  width: 100px;
+  border-radius: 20px;
+  border: none !important;
+  }
+}
+
+.question-page{
+  .question-content{
+    text-align: center;
+    color: white;
+    > h2 {
+      color: white;
+      margin-bottom: 20px; 
+    }
+    > ul{
+      list-style-type: none;
+    }
+    .btn-info{
+      height: 50px;
+      width: 150px;
+      border-radius: 20px;
+      border: none !important;
+      cursor: pointer;
+    }
+
+    .btn-info:disabled{
+      height: 50px;
+      width: 150px;
+      border-radius: 20px;
+      border: none !important;
+      background-color: gray;
+      cursor: default;
+    }
+  }
+
+}
+
+.custom-checkbox {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: lightgray;
+  border: 2px solid lightseagreen;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
+.custom-checkbox .checkmark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background-color: gray;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.custom-checkbox input:checked + .checkmark {
+  opacity: 1;
+}
+
+
+.input-question-content{
+  text-align: center;
+  color: white;
+    > h2 {
+      color: white;
+      margin-bottom: 20px; 
+    }
+
+    > input{
+      margin-right: 10px;
+    }
+
+    > button {
+
+    }
 }
