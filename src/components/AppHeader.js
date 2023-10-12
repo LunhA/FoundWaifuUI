@@ -9,7 +9,7 @@ function AppHeader() {
           <div class="row">
             <div class="col-md-6 text-center">
               <a class="navbar-brand text-white" href="index.html"
-                >FOUNDWAIFU
+                >FOUNDCHARACTER
                 <span class="text-white">Base on MBTI's system</span></a
               >
             </div>

@@ -21,6 +21,7 @@ const extravertedItems = [
   "ESFJ",
   "ENFJ",
   "ENTJ",
+  "Tôi Không Rõ",
 ];
 
 function QuestionPage() {
@@ -48,10 +49,10 @@ function QuestionPage() {
   };
 
   const handleNextButtonClick = () => {
-    if (selectedItems.length === 4) {
-      history("/home");
-    } else if (selectedItems.includes("Tôi Không Rõ")) {
+    if (selectedItems.includes("Tôi Không Rõ")) {
       history("/input");
+    } else if (selectedItems.length === 4) {
+      history("/home");
     } else {
       alert("Vui lòng chọn đủ 4 nhóm tính cách");
     }
@@ -59,7 +60,7 @@ function QuestionPage() {
   return (
     <div className="question-page">
       <div className="question-content">
-        <h2>Câu hỏi thứ 1: Chọn 4 mục mà bạn quan trọng nhất:</h2>
+        <h2>Hãy chọn 4 nhóm tính cách mà bạn yêu thích:</h2>
         <div className="columns">
           <div className="column">
             <ul>
@@ -70,7 +71,10 @@ function QuestionPage() {
                       type="checkbox"
                       value={item}
                       onChange={() => handleItemSelection(item)}
-                      disabled={selectedItems.length === 4 && !selectedItems.includes(item)}
+                      disabled={
+                        selectedItems.length === 4 &&
+                        !selectedItems.includes(item)
+                      }
                     />
                     <span className="checkmark"></span>
                   </label>
@@ -88,11 +92,14 @@ function QuestionPage() {
                       type="checkbox"
                       value={item}
                       onChange={() => handleItemSelection(item)}
-                      disabled={selectedItems.length === 4 && !selectedItems.includes(item)}
+                      disabled={
+                        selectedItems.length === 4 &&
+                        !selectedItems.includes(item)
+                      }
                     />
                     <span className="checkmark"></span>
-                  {item}
                   </label>
+                  {item}
                 </li>
               ))}
             </ul>

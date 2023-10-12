@@ -6,7 +6,7 @@ function AppFooter() {
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-lg-3 mb-md-0 mb-4">
-						<h2 class="footer-heading"><a href="#" class="logo">FoundWaifu</a></h2>
+						<h2 class="footer-heading"><a href="#" class="logo">FoundCharacter</a></h2>
 						<p>A small site with the mission of bringing waifus to millions of users..</p>
 						<a href="#">read more <span class="ion-ios-arrow-round-forward"></span></a>
 					</div>

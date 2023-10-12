@@ -9,9 +9,11 @@ import PersonalSelected from "./views/PersonalitySelected";
 import QuestionPage from "./views/QuestionPage";
 import './App.css';
 
+
 function App() {
   return (
-    <Router>
+    <div>
+<Router>
       <Routes> {/* Sử dụng <Routes> để định nghĩa các tuyến */}
         <Route path="/" element={<WelcomePage />} />
         <Route path="/characterdetails/:id" element={<CharacterDetails />} />
@@ -22,7 +24,8 @@ function App() {
         <Route path="/question" element={<QuestionPage />} />
       </Routes>
     </Router>
-  );
+    </div>
+    );
 }
 
 export default App;
