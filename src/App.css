@@ -1,6 +1,6 @@
 body {
   background-color: #111617;
-  font-family: Google Sans!important;
+  font-family: tahoma!important;
 }
 
 .header-container {
@@ -360,3 +360,49 @@ body {
   height: 150px;
   width: 130px;
 }
+
+.home-container {
+  width: 100%;
+  min-height: 1000px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Characters-container-title{
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  padding-left: 20%;
+}
+
+.characters-container {
+  width: 100%;
+  height: 360px;
+  /* background-color: yellowgreen; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  Gap: 30px;
+}
+
+.character-profile {
+  height: 260px;
+  width: 206px;
+  color: #000000;
+  font-size: medium;
+  font-weight: 700;
+  border: 1px solid black;
+  background-color: whitesmoke;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  > img {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    margin: 20px;
+  }
+}
+
