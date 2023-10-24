@@ -368,6 +368,14 @@ body {
   flex-direction: column;
 }
 
+.character-details-container{
+  width: 100%;
+  min-height: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .Characters-container-title{
   color: white;
   font-weight: 700;
@@ -406,3 +414,8 @@ body {
   }
 }
 
+.character-detail-container{
+  width: 37.5%;
+  height: 500px;
+  background-color: darkcyan;
+}
