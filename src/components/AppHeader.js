@@ -1,10 +1,7 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./AppHeader/css/style.css";
 import { useState } from "react";
-
-
-
 
 function AppHeader() {
   const history = useNavigate();
@@ -25,10 +22,10 @@ function AppHeader() {
           <div class="col-md-8 order-md-last">
             <div class="row">
               <div class="col-md-6 text-center">
-                <a class="navbar-brand text-white" href="index.html">
+                <Link class="navbar-brand text-white" to="/home">
                   FOUNDCHARACTER
                   <span class="text-white">Base on MBTI's system</span>
-                </a>
+                </Link>
               </div>
               <div class="col-md-6 d-md-flex justify-content-end mb-md-0 mb-3">
                 <form action="#" class="searchform order-lg-last">
@@ -112,9 +109,9 @@ function AppHeader() {
           <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav m-auto">
               <li class="nav-item active">
-                <a href="#" class="nav-link">
+                <Link to="/home" class="nav-link">
                   Home
-                </a>
+                </Link>
               </li>
               <li class="nav-item dropdown">
                 <a

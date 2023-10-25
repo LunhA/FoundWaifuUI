@@ -1,3 +1,5 @@
+@import "~font-awesome/css/font-awesome.css";
+
 body {
   background-color: #111617;
   font-family: tahoma!important;
@@ -417,5 +419,126 @@ body {
 .character-detail-container{
   width: 37.5%;
   height: 500px;
-  background-color: darkcyan;
+  /* background-color: darkcyan; */
+}
+
+.back-button {
+  background-color: transparent;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.character-package{
+  width: 100%;
+  height: 40%;
+  display: flex;
+}
+
+.character-detail-paner{
+  width: 30%;
+  height: 100%;
+  /* background-color: white; */
+}
+
+.character-detail-data{
+  padding-left: 1%;
+  width: 70%;
+  height: 40%;
+  /* background-color: white; */
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  font-weight: 500;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  Gap: 10%;
+}
+
+.character--img{
+  width: 100%;
+  border-radius: 10%;
+  
+}
+
+.character-detail-name{
+  color: white;
+  font-size: 25px;
+}
+
+.character-detail-type{
+  color: rgb(182, 135, 15);
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.character-detail-anime{
+  height: 90%;
+  width: 80%;
+  font-weight: 400;
+  display: block;
+  background-color: wheat;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.related-character-container{
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+}
+.related-title{
+  color: white;
+  height: 30px;
+  width: 100%;
+  margin-bottom: 1%;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.related-character-content{
+  display: flex;
+  gap: 1%;
+  flex-wrap: wrap;
+}
+
+.related-character-profile {
+  height: 100px;
+  width: 200px;
+  color: #000000;
+  font-size: medium;
+  font-weight: 700;
+  border: 1px solid black;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-bottom: 1%;
+
+  > img {
+    width: 70px;
+    height: 70px;
+    border: 1px solid black;
+    margin: 20px;
+  }
+}
+
+.related-character-info-container{
+  display: Flex;
+  flex-direction: column;
+}
+
+.related-character-name{
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.related-character-type{
+  font-size: 14px;
+  font-weight: 400;
 }
