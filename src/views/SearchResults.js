@@ -19,7 +19,7 @@ function SearchResults() {
                   alt=""
                 ></img>
                 <div>
-                <span className="character-name">Alice Lendrott</span>
+                <span className="character-name" style={{height: 28 + 'px'}} >Alice Lendrott</span>
                 <span className="character-movies-title">Shinigami bocchan to kuro maid</span>
                 <span className="character-type">INFJ</span>
                 </div>

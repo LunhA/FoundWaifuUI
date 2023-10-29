@@ -51,7 +51,8 @@ export default function CharacterDetails() {
                     style={{
                       width: 40 + "px",
                       height: 40 + "px",
-                      color: "palevioletred",
+                      // color: "palevioletred",
+                      color: "#F875AA",
                       fontSize: 30 + "px",
                     }}
                     onClick={toggleLove}
