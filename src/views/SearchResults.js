@@ -9,7 +9,13 @@ function SearchResults() {
     return (
         <div className="home-page">
             <AppHeader/>
-            <div className='home-container'></div>
+            <div className='home-container'>
+                <div className='search-container'>
+                    <div className='div70' >
+                    <span>Kết quả tìm kiếm cho: {"Alice"}</span>
+                    </div>
+                </div>
+            </div>
             <AppFooter/>
         </div>
     )
