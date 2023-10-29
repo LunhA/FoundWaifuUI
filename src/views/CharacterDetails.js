@@ -68,7 +68,7 @@ export default function CharacterDetails() {
                 <div className="character-detail-anime">
                   Anime: Shinigami Bocchan to Kuro Maid
                 </div>
-                <i
+                {/* <i
                   className="fa fa-forward"
                   onClick={{}}
                   style={{
@@ -79,7 +79,7 @@ export default function CharacterDetails() {
                     color: "#fff",
                     fontSize: 25 + "px",
                   }}
-                ></i>
+                ></i> */}
               </div>
               <span className="character-detail-type"> MBTI type: INTJ </span>
             </div>
