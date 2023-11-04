@@ -51,7 +51,8 @@ export default function CharacterDetails() {
                     style={{
                       width: 40 + "px",
                       height: 40 + "px",
-                      color: "palevioletred",
+                      // color: "palevioletred",
+                      color: "#F875AA",
                       fontSize: 30 + "px",
                     }}
                     onClick={toggleLove}
@@ -68,7 +69,7 @@ export default function CharacterDetails() {
                 <div className="character-detail-anime">
                   Anime: Shinigami Bocchan to Kuro Maid
                 </div>
-                <i
+                {/* <i
                   className="fa fa-forward"
                   onClick={{}}
                   style={{
@@ -79,7 +80,7 @@ export default function CharacterDetails() {
                     color: "#fff",
                     fontSize: 25 + "px",
                   }}
-                ></i>
+                ></i> */}
               </div>
               <span className="character-detail-type"> MBTI type: INTJ </span>
             </div>
