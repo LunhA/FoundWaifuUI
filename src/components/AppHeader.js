@@ -5,6 +5,7 @@ import { useState } from "react";
 
 function AppHeader() {
   const history = useNavigate();
+  const [isLogin, setIsLogin] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [searchValue, setSearchValue] = useState("");
 
@@ -14,6 +15,16 @@ function AppHeader() {
       history(`/searchresults`);
     }
   };
+
+  const handleAccountClick = () => {
+    if (isLogin != false){
+      history(`/account`)
+    } else history(`/login`);
+  }
+
+  const handleLikedClick = () => {
+    history(`/liked`);
+  }
 
   return (
     <section class="ftco-section">
@@ -180,20 +191,20 @@ function AppHeader() {
                   Fictional
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  Famous People
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  Meme
+              <li class="nav-item" onClick={handleLikedClick}>
+                <a class="nav-link">
+                  Liked
                 </a>
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   About
                 </a>
+              </li>
+              <li class="nav-item" onClick={handleAccountClick}>
+                <p  class="nav-link">
+                  Account
+                </p>
               </li>
             </ul>
           </div>

@@ -9,6 +9,7 @@ import SearchResults from "./views/SearchResults";
 import PersonalSelected from "./views/PersonalitySelected";
 import QuestionPage from "./views/QuestionPage";
 import Login from "./views/Login";
+import Account from "./views/Account";
 import './App.css';
 
 
@@ -27,6 +28,7 @@ function App() {
         <Route path="/personalselected" element={<PersonalSelected />} />
         <Route path="/question" element={<QuestionPage />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/account" element={<Account />} />
       </Routes>
     </Router>
     </div>

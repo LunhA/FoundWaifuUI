@@ -371,7 +371,7 @@ body {
 
 }
 
-.character-details-container, .search-container{
+.character-details-container, .search-container, .account-container{
   width: 100%;
   min-height: 1000px;
   display: flex;
@@ -729,4 +729,86 @@ form .btns input[type="submit"]{
 /* SEARCH RESULTS */
 .div70{
   width: 40%;
+  
+  > span{
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+  }
 }
+
+/* LIKED */
+
+.character-list ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  > li{
+    margin-bottom: 1%;
+    
+    > .character-info{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+
+    }
+  }
+}
+
+.liked-character-info-container{
+  width: 70%;
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+}
+
+.character-item {
+  width: 100%;
+  /* margin: 10px; */
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+
+}
+
+.liked-character-img {
+  width: 100px;
+  height: 100px;
+}
+
+.liked-character-name {
+  font-weight: bold;
+  font-size: 25px;
+  margin: 10px;
+}
+
+.liked-character-personality {
+  color: rgb(182, 135, 15);
+  font-size: 18px;
+  font-weight: 400;
+  margin-left: 10px;
+}
+
+.liked-check{
+  width: 40px;
+  height: 40px;
+  color: palevioletred;
+  font-size: 30px;
+  cursor: pointer ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.div16{
+  width: 16%;
+ display: flex;
+ align-items: center;
+ justify-content: center ;
+}
+
+/* ACCOUNT */

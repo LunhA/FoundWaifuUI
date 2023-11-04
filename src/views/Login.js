@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AppHeader from "./../components/AppHeader";
 import AppFooter from "./../components/AppFooter";
 
 
 export default function Login() {
+
+  useEffect(() => {
   const loginText = document.querySelector(".title-text .login");
   const loginForm = document.querySelector("form.login");
   const loginBtn = document.querySelector("label.login");
@@ -21,7 +23,7 @@ export default function Login() {
   signupLink.onclick = (()=>{
     signupBtn.click();
     return false;
-  });
+  });}, [])
 
 
     return(
