@@ -737,6 +737,17 @@ form .btns input[type="submit"]{
   }
 }
 
+.Search-content-container{
+  width: 100%;
+  height: 100%;
+}
+
+.character-search-banner{
+  width: 100%;
+  height: 100px;
+  display: flex;
+}
+
 /* LIKED */
 
 .character-list ul {
