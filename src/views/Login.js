@@ -1,10 +1,22 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from "react-router-dom";
+import { authService } from '@/utils/auth-service';
 import AppHeader from "./../components/AppHeader";
 import AppFooter from "./../components/AppFooter";
 
 
 export default function Login() {
+
+  const history  = useNavigate();
+
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [user, setUser] = useState({});
+  const isLoggedIn = !!authService.getSession();
+
+  useEffect(() => {
+    setUser(authService.getSession());
+  }, []);
   
   useEffect(() => {
   const loginText = document.querySelector(".title-text .login");
@@ -13,7 +25,6 @@ export default function Login() {
   const signupBtn = document.querySelector("label.signup");
   const signupLink = document.querySelector("form .signup-link a");
 
-  // Window.onload = function(){
   signupBtn.onclick = (()=>{
     loginForm.style.marginLeft = "-50%";
     loginText.style.marginLeft = "-50%";
@@ -29,6 +40,12 @@ export default function Login() {
     return false;
   });
 }, []);
+
+
+  const onLogout = () => {
+    authService.logout();
+    history.push(`/home`);
+  };
   
 
     return(
