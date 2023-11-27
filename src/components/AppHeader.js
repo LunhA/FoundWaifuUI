@@ -33,7 +33,7 @@ function AppHeader() {
           <div class="col-md-8 order-md-last">
             <div class="row">
               <div class="col-md-6 text-center">
-                <Link class="navbar-brand text-white" to="/home">
+                <Link class="navbar-brand text-white" to="/home/">
                   FOUNDCHARACTER
                   <span class="text-white">Base on MBTI's system</span>
                 </Link>
@@ -127,7 +127,6 @@ function AppHeader() {
               <li class="nav-item dropdown">
                 <a
                   class="nav-link dropdown-toggle"
-                  href="#"
                   id="dropdown04"
                   data-toggle="dropdown"
                   aria-haspopup="true"

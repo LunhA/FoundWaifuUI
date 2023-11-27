@@ -20,7 +20,7 @@ function App() {
 <Router>
       <Routes> {/* Sử dụng <Routes> để định nghĩa các tuyến */}
         <Route path="/" element={<WelcomePage />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/home/:personalityType" element={<Home />} />
         <Route path="/characterdetails/:id" element={<CharacterDetails />} />
         <Route path="/input" element={<InputPage />} />
         <Route path="/liked" element={<Liked />} />

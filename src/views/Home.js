@@ -1,19 +1,38 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import AppHeader from "./../components/AppHeader";
 import AppFooter from "./../components/AppFooter";
-import { getSuggestedCharsApi } from "../api/recommendation.api";
+import { getSuggestedCharsApi, getCharacterByAnimeIdApi } from "../api/recommendation.api";
 
 export default function Home() {
   const history = useNavigate();
+  const { personalityType } = useParams();
   const [characterList, setCharacterList] = useState([]);
+  const [relatedList, setRelatedList] = useState([]);
 
   useEffect(() => {
-    getSuggestedCharsApi("INFJ").then((res) => setCharacterList(res));
-  }, []);
+    getSuggestedCharsApi(personalityType).then((res) => setCharacterList(res));
+  }, [personalityType]);
+
+  console.log(characterList);
 
   const renderCharacters = () => {
     return characterList.map((char) => (
+      <div className="character-profile">
+        <img className="character-img" src={char.profileImageUrl} alt=""></img>
+        <span className="character-name">{char.name}</span>
+        <span className="character-type">{char.personalityType}</span>
+      </div>
+    ));
+  };
+
+  if (characterList.length > 0) {
+    getCharacterByAnimeIdApi(characterList[0].animeId).then((res) => setRelatedList(res));
+    // Du con di me cho nay khong phai xai cai nay.
+  };
+
+  const renderRelatedCharacters = () => {
+    return relatedList.map((char) => (
       <div className="character-profile">
         <img className="character-img" src={char.profileImageUrl} alt=""></img>
         <span className="character-name">{char.name}</span>
@@ -36,8 +55,11 @@ export default function Home() {
         </span>
         <div
           className="Characters-container"
-          id="Suggested-characters-container"
-        ></div>
+          // id="Suggested-characters-container"
+          id="Inputed-characters-container"
+        >
+          {renderRelatedCharacters()}
+        </div>
       </div>
       <AppFooter />
     </div>

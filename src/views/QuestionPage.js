@@ -26,21 +26,21 @@ const extravertedItems = [
 
 function QuestionPage() {
   const history = useNavigate();
-  const [selectedItems, setSelectedItems] = useState([]);
+  const [selectedItem, setSelectedItem] = useState([]);
   const [canProceed, setCanProceed] = useState(true);
 
   const handleItemSelection = (item) => {
-    const isItemSelected = selectedItems.includes(item);
+    const isItemSelected = selectedItem.includes(item);
 
-    if (selectedItems.length < 4 || isItemSelected) {
+    if (selectedItem.length < 1 || isItemSelected) {
       if (isItemSelected) {
-        setSelectedItems(selectedItems.filter((selected) => selected !== item));
+        setSelectedItem(selectedItem.filter((selected) => selected !== item));
       } else {
-        setSelectedItems([...selectedItems, item]);
+        setSelectedItem([...selectedItem, item]);
       }
 
       // Kiểm tra nếu đã chọn "Tôi Không Rõ" thì vô hiệu hóa nút "Tiếp Theo"
-      if (selectedItems.includes("Tôi Không Rõ")) {
+      if (selectedItem.includes("Tôi Không Rõ")) {
         setCanProceed(false);
       } else {
         setCanProceed(true);
@@ -49,18 +49,18 @@ function QuestionPage() {
   };
 
   const handleNextButtonClick = () => {
-    if (selectedItems.includes("Tôi Không Rõ")) {
+    if (selectedItem.includes("Tôi Không Rõ")) {
       history("/input");
-    } else if (selectedItems.length === 4) {
-      history("/home");
+    } else if (selectedItem.length === 1) {
+      history(`/home/${selectedItem}`);
     } else {
-      alert("Vui lòng chọn đủ 4 nhóm tính cách");
+      alert("Vui lòng chọn 1 nhóm tính cách");
     }
   };
   return (
     <div className="question-page">
       <div className="question-content">
-        <h2>Hãy chọn 4 nhóm tính cách mà bạn yêu thích:</h2>
+        <h2>Hãy chọn tính cách mà bạn yêu thích:</h2>
         <div className="columns">
           <div className="column">
             <ul>
@@ -72,8 +72,8 @@ function QuestionPage() {
                       value={item}
                       onChange={() => handleItemSelection(item)}
                       disabled={
-                        selectedItems.length === 4 &&
-                        !selectedItems.includes(item)
+                        selectedItem.length === 1 &&
+                        !selectedItem.includes(item)
                       }
                     />
                     <span className="checkmark"></span>
@@ -93,8 +93,8 @@ function QuestionPage() {
                       value={item}
                       onChange={() => handleItemSelection(item)}
                       disabled={
-                        selectedItems.length === 4 &&
-                        !selectedItems.includes(item)
+                        selectedItem.length === 1 &&
+                        !selectedItem.includes(item)
                       }
                     />
                     <span className="checkmark"></span>
@@ -109,7 +109,7 @@ function QuestionPage() {
         <button
           className="btn-info"
           onClick={handleNextButtonClick}
-          // disabled={!canProceed}
+          disabled={!canProceed}
         >
           Tiếp Theo
         </button>
