@@ -34,7 +34,7 @@ function Liked() {
                   </div>
                 </li>
 
-                <li className="character-item">
+                {/* <li className="character-item">
                   <div className="character-info">
                     <img
                       className="liked-character-img"
@@ -53,7 +53,7 @@ function Liked() {
                     <span className="fa fa-heart liked-check"></span> 
                     </div>
                   </div>
-                </li>
+                </li> */}
                 
               </ul>
             </div>

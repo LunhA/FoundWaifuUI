@@ -10,6 +10,7 @@ import PersonalSelected from "./views/PersonalitySelected";
 import QuestionPage from "./views/QuestionPage";
 import Login from "./views/Login";
 import Account from "./views/Account";
+import PersonalitySelected from "./views/PersonalitySelected";
 import './App.css';
 
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/home/:personalityType" element={<Home />} />
         <Route path="/characterdetails/:id" element={<CharacterDetails />} />
         <Route path="/input" element={<InputPage />} />
+        <Route path="/personality-selected/:personalityType" element={<PersonalitySelected />}/>
         <Route path="/liked" element={<Liked />} />
         <Route path="/searchresults" element={<SearchResults />} />
         <Route path="/personalselected" element={<PersonalSelected />} />
