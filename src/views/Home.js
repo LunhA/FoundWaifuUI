@@ -26,10 +26,12 @@ export default function Home() {
     ));
   };
 
-  if (characterList.length > 0) {
-    getCharacterByAnimeIdApi(characterList[0].animeId).then((res) => setRelatedList(res));
-    // Du con di me cho nay khong phai xai cai nay.
-  };
+  useEffect(() => {
+    if (characterList.length > 0) {
+      getCharacterByAnimeIdApi(characterList[0].animeId).then((res) => setRelatedList(res));
+      // Du con di me cho nay khong phai xai cai nay.
+    };
+  },[characterList]);
 
   const renderRelatedCharacters = () => {
     return relatedList.map((char) => (
@@ -54,7 +56,7 @@ export default function Home() {
           Đề xuất dựa theo lựa chọn của bạn:{" "}
         </span>
         <div
-          className="Characters-container"
+          className="characters-container"
           // id="Suggested-characters-container"
           id="Inputed-characters-container"
         >

@@ -1,11 +1,16 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import classNames from "classnames";
 import AppHeader from "./../components/AppHeader";
 import AppFooter from "./../components/AppFooter";
+import { getCharacterByIdApi, getCharacterByAnimeIdApi } from "../api/recommendation.api";
+
 
 export default function CharacterDetails() {
   const history = useNavigate();
+  const { characterId } = useParams();
+  const [characterDetail, setcharacterDetail] = useState([]);
+  const [relatedList, setRelatedList] = useState([]);
   const [isLoved, setIsLoved] = useState(false);
 
   const toggleLove = () => {
@@ -13,12 +18,21 @@ export default function CharacterDetails() {
   };
 
   const loveIconClasses = classNames("fa", {
-    "fa-heart": !isLoved,
-    "fa-heart-o": isLoved,
+    "fa-heart": isLoved,
+    "fa-heart-o": !isLoved,
   });
 
   const handleBackBtn = () => {
     window.history.back();
+  };
+
+  useEffect(() => {
+    getCharacterByIdApi(characterId).then((res) => setcharacterDetail(res));
+  },[characterDetail]);
+  console.log(characterDetail);
+
+  const renderRelatedCharacters = () => {
+    return relatedList.map
   };
 
   return (
@@ -33,7 +47,7 @@ export default function CharacterDetails() {
             <div className="character-detail-paner">
               <img
                 className="character--img"
-                src="https://dummyimage.com/300/09f/fff.png"
+                src={characterDetail.profileImageUrl}
               ></img>
             </div>
             <div className="character-detail-data">
@@ -44,7 +58,7 @@ export default function CharacterDetails() {
                   justifyContent: "space-between",
                 }}
               >
-                <span className="character-detail-name">Name: Lalalalala</span>
+                <span className="character-detail-name">{characterDetail.name}</span>
                 <div className="character-detail-liked">
                   <i
                     className={loveIconClasses}
@@ -82,12 +96,12 @@ export default function CharacterDetails() {
                   }}
                 ></i> */}
               </div>
-              <span className="character-detail-type"> MBTI type: INTJ </span>
+              <span className="character-detail-type"> MBTI type: {characterDetail.personalityType} </span>
             </div>
           </div>
           <div className="related-character-container">
             <span className="related-title">
-              Các nhân vật có loại tính cách tương tự:
+              Các nhân vật có liên quan:
             </span>
             <div className="related-character-content">
               <div className="related-character-profile">
