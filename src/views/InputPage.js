@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { searchBarApi } from "../api/recommendation.api";
+
 
 function InputPage() {
   const history = useNavigate();
   const [inputValue, setInputValue] = useState("");
   const [characterList, setCharacterList] = useState([]);
+  const [searchList, setSearchList] = useState([]);
 
   const handleInputSubmit = () => {
     if (inputValue.trim() !== "") {
@@ -17,6 +20,13 @@ function InputPage() {
         history("/home");
       }
     }
+  };
+
+  const handleSearch = (e) => {
+    const searchValue = e.target.value;
+
+    searchBarApi(searchValue).then((res) => setSearchList(res));
+    console.log(searchList);
   };
 
   const handleNextClick = () => {
@@ -43,8 +53,9 @@ function InputPage() {
         <input
           className="Input-question-input"
           type="text"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
+          // value={inputValue}
+          // onChange={(e) => setInputValue(e.target.value)}
+          onChange={(e) => handleSearch(e)}
           placeholder="Nhập tên nhân vật bất kỳ..."
         />
         <button
