@@ -8,6 +8,10 @@ export const getCharacterByMbtiApi = (mbti) => {
   return axiosInstance.get(`/characters-by-mbti/${mbti}`);
 };
 
+export const getMutualCharacterApi = (mbti) => {
+  return axiosInstance.get(`/mutual-characters/${mbti}`);
+};
+
 export const getCharacterByAnimeIdApi = (id) => {
   return axiosInstance.get(`/related-characters/${id}`);
 };

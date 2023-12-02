@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import AppHeader from "./../components/AppHeader";
 import AppFooter from "./../components/AppFooter";
-import { getSuggestedCharsApi, getCharacterByAnimeIdApi } from "../api/recommendation.api";
+import { getSuggestedCharsApi, getMutualCharacterApi } from "../api/recommendation.api";
 
 export default function Home() {
   const history = useNavigate();
@@ -27,11 +27,9 @@ export default function Home() {
   };
 
   useEffect(() => {
-    if (characterList.length > 0) {
-      getCharacterByAnimeIdApi(characterList[0].animeId).then((res) => setRelatedList(res));
-      // Du con di me cho nay khong phai xai cai nay.
-    };
-  },[characterList]);
+      getMutualCharacterApi(personalityType).then((res) => setRelatedList(res));
+      console.log(relatedList);
+  },[personalityType]);
 
   const renderRelatedCharacters = () => {
     return relatedList.map((char) => (
@@ -60,7 +58,9 @@ export default function Home() {
           // id="Suggested-characters-container"
           id="Inputed-characters-container"
         >
+          <div className="container70" >
           {renderRelatedCharacters()}
+          </div>
         </div>
       </div>
       <AppFooter />

@@ -2,12 +2,14 @@ import React from "react";
 import { useNavigate, Link } from "react-router-dom";
 import "./AppHeader/css/style.css";
 import { useState } from "react";
+import { searchBarApi } from "../api/recommendation.api";
 
 function AppHeader() {
   const history = useNavigate();
   const [isLogin, setIsLogin] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [searchValue, setSearchValue] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
 
   const handleSearch = () => {
     if (inputValue.trim() !== "") {
@@ -38,6 +40,7 @@ function AppHeader() {
                   <span class="text-white">Base on MBTI's system</span>
                 </Link>
               </div>
+
               <div class="col-md-6 d-md-flex justify-content-end mb-md-0 mb-3">
                 <form action="#" class="searchform order-lg-last">
                   <div class="form-group d-flex">
@@ -59,6 +62,7 @@ function AppHeader() {
                   </div>
                 </form>
               </div>
+
             </div>
           </div>
           <div class="col-md-4 d-flex">
